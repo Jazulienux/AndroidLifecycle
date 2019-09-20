@@ -23,21 +23,16 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 		// TODO: bind layout di sini
 		numberInput = findViewById(R.id.number_input);
+		initRandomNumber();
 	}
 
 	// TODO: generate angka random di sini
 	private void initRandomNumber() {
 		rand = new Random();
-		if(number_random == 0){
-			number_random = rand.nextInt(100);
-		}
-		else{
-			number_random = number_random;
-		}
+		number_random = rand.nextInt(100);
 	}
 
 	public void handleGuess(View view) {
-		initRandomNumber();
 		// TODO: Tambahkan logika untuk melakukan pengecekan angka
 		if(numberInput.getText().toString().trim().equals("")){
 			Toast.makeText(this,"Data Tidak Boleh Kosong !!",Toast.LENGTH_LONG).show();
